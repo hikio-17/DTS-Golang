@@ -1,2 +1,11 @@
 inisialisasi projek
 go mod init project-pertama
+
+Data Types
+1. Basic Type: number, string, boolean.
+2. Aggregate Type: array dan struct.
+3. Reference Type: slice, pointer, map, function, channel.
+Interface Type: interface.
+
+untuk mengecek tipe Data
+fmt.Printf("tipe data first : %\T\n", data);
