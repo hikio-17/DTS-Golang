@@ -1,0 +1,2 @@
+inisialisasi projek
+go mod init project-pertama
