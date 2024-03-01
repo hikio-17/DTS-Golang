@@ -1,0 +1,4 @@
+// Conditions
+
+Pada bahasa Go, terdapat 2 macam kondisional yang dapat kita pakai yaitu if else dan switch
+
