@@ -1,0 +1,53 @@
+package main
+
+import "fmt"
+
+// func main() {
+// 	c := make(chan string)
+
+// 	go introduce("Airel", c)
+// 	go introduce("Nanda", c)
+// 	go introduce("Mailo", c)
+
+// 	msg1 := <-c
+// 	fmt.Println(msg1)
+
+// 	msg2 := <-c
+// 	fmt.Println(msg2)
+
+// 	msg3 := <-c
+// 	fmt.Println(msg3)
+
+// 	close(c)
+// }
+
+// func introduce(student string, c chan string) {
+// 	result := fmt.Sprintf("Hai, my name is %s", student)
+
+// 	c <- result
+// }
+
+func main() {
+	c := make(chan string)
+	students := []string{"Airell", "Hailo", "Indah"}
+
+	for _, v := range students {
+		//
+		go introduce(v, c)
+	}
+
+	for i := 1; i <= 3; i++ {
+		print(c)
+	}
+
+	close(c)
+}
+
+func print(c <-chan string) {
+	fmt.Println(<-c)
+}
+
+func introduce(student string, c chan<- string) {
+	result := fmt.Sprintf("Hai, my name is %s", student)
+	c <- result
+}

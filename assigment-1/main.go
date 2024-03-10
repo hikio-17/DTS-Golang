@@ -1,20 +1,13 @@
 package main
 
 import (
+	"assigment-1/helpers"
 	"fmt"
 	"os"
 	"strconv"
 )
 
-type Person struct {
-	No           int
-	Nama         string
-	Pekerjaan    string
-	Alamat       string
-	AlasanGolang string
-}
-
-var persons []Person = []Person{
+var persons []helpers.Person = []helpers.Person{
 	{
 		No:           1,
 		Nama:         "Fajri Muhammad Tio",
@@ -36,12 +29,33 @@ var persons []Person = []Person{
 		Pekerjaan:    "Freelance",
 		AlasanGolang: "Iseng aja sih pengen nyoba hal baru aja sih",
 	},
+	{
+		No:           5,
+		Nama:         "Asuna",
+		Alamat:       "Jl. Merdeka No. 5",
+		Pekerjaan:    "Freelance",
+		AlasanGolang: "Iseng aja sih pengen nyoba hal baru aja sih",
+	},
+	{
+		No:           4,
+		Nama:         "Kirigaya Kazuto",
+		Alamat:       "Jl. Merdeka No. 4",
+		Pekerjaan:    "Freelance",
+		AlasanGolang: "Iseng aja sih pengen nyoba hal baru aja sih",
+	},
 }
 
 func main() {
-	noAbsen, _ := strconv.Atoi(os.Args[1])
+	var arguments []string = os.Args
 
-	var person Person
+	if len(arguments) < 2 {
+		fmt.Println("Silahkan masukkan id absen siswa")
+		return
+	}
+
+	noAbsen, _ := strconv.Atoi(arguments[1])
+
+	var person helpers.Person
 
 	for _, p := range persons {
 		if p.No == noAbsen {
@@ -51,12 +65,8 @@ func main() {
 	}
 
 	if person.Nama != "" {
-		fmt.Println("Nama: ", person.Nama)
-		fmt.Println("Alamat: ", person.Alamat)
-		fmt.Println("Pekerjaan: ", person.Pekerjaan)
-		fmt.Println("Alasan Golang: ", person.AlasanGolang)
+		person.DisplayData()
 	} else {
 		fmt.Println("Data dengan no absen", noAbsen, "tidak ditemukan")
 	}
-
 }

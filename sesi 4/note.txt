@@ -1,0 +1,5 @@
+Interface
+=> Interface adalah sebuah tipe data pada bahasa GO yang merupakan kumpulan dari definisi satu atau lebih method. kita dapat menggunakan tipe data interface jika kita telah mengimplementasikan method-method yang telah didefiniskan oelh interface tersebut melalui tipe data lainnya.
+
+waitgroup -> go routines
+Waitgroup merupakan sebuah struct dari pakage sync, yang digunakan untuk melakukan sinkronisasi terhadap go routine

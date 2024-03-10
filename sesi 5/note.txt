@@ -1,0 +1,1 @@
+Channel merupakan sebuah mekanisme untuk Goroutine saling berkomunikasi denan Goroutine lainnya. Maksud berkomunikasi disini adalah proses pengiriman dan pertukaran data antara Goroutine satu dengan Goroutine lainnya.
