@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>HTML</title>
+</head>
+<body>
+   <div>
+      <ul>
+         {{ range $value := . }}
+         <li>
+            ID: {{ $value.ID }}
+            Name: {{ $value.Name }}
+            Age: {{ $value.Age }}
+            Division: {{ $value.Division }}
+         </li>
+         {{ end }}
+      </ul>
+   </div>
+</body>
+</html>
